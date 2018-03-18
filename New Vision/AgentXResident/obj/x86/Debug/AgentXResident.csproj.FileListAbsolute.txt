@@ -25,3 +25,12 @@ C:\Documents and Settings\User\Мои документы\Visual Studio 2010\Proj
 C:\Documents and Settings\User\Мои документы\Visual Studio 2010\Projects\New Vision\AgentXResident\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\User\Мои документы\Visual Studio 2010\Projects\New Vision\AgentXResident\bin\Debug\AgentXResident.exe
 C:\Documents and Settings\User\Мои документы\Visual Studio 2010\Projects\New Vision\AgentXResident\bin\Debug\AgentXResident.pdb
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\bin\Debug\AgentXResident.exe
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\bin\Debug\AgentXResident.pdb
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.csprojResolveAssemblyReference.cache
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.Form1.resources
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.Properties.Resources.resources
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.csproj.GenerateResource.cache
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.csproj.CoreCompileInputs.cache
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.exe
+D:\Git_Re_Positories\AgentXResident\New Vision\AgentXResident\obj\x86\Debug\AgentXResident.pdb

@@ -47,6 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +74,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(42, 273);
             this.button2.Name = "button2";
@@ -104,6 +106,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "4) Исключение XOR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label2
             // 
@@ -111,7 +114,7 @@
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(594, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 23);
+            this.label2.Size = new System.Drawing.Size(136, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "Входной текст:";
             this.label2.Visible = false;
@@ -144,7 +147,7 @@
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(594, 347);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 23);
+            this.label3.Size = new System.Drawing.Size(149, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Выходной текст:";
             this.label3.Visible = false;
@@ -177,7 +180,7 @@
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(38, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 23);
+            this.label4.Size = new System.Drawing.Size(197, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "Шифровка\\Дешифровка";
             // 
@@ -257,11 +260,23 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button10
+            // 
+            this.button10.Enabled = false;
+            this.button10.Location = new System.Drawing.Point(411, 324);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(45, 89);
+            this.button10.TabIndex = 19;
+            this.button10.Text = "/|\\";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 602);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -309,6 +324,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 

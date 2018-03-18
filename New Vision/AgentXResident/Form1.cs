@@ -15,6 +15,7 @@ namespace AgentXResident
         private Dictionary<char, char> alphabetFinal = new Dictionary<char, char>();
         private List<char> alphabetOrig = new List<char>();
         private int alphabetPower;
+        private byte[] encodedText = null;
 
         public Form1()
         {
@@ -91,7 +92,7 @@ namespace AgentXResident
                     }
 
                     textBox2.Text = String.Join("", encodedText);                                               //Вывод шифрованного текста
-                    textBox2.Text += Environment.NewLine + String.Join(Environment.NewLine, alphabetFinal);    //Вывод ключей
+                    textBox2.Text += "/" + Environment.NewLine + String.Join(Environment.NewLine, alphabetFinal);    //Вывод ключей
 
                 }
 
@@ -201,7 +202,7 @@ namespace AgentXResident
                 }
 
                 textBox2.Text = String.Join("", encodedText);
-                textBox2.Text += Environment.NewLine + String.Join(Environment.NewLine, alphabetFinal);
+                textBox2.Text += "/" + Environment.NewLine + String.Join(Environment.NewLine, alphabetFinal);
             }
 
             else if (radioButton2.Checked)
@@ -303,6 +304,31 @@ namespace AgentXResident
 
         }
 
+        //Шифровка XOR
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            //Шифровка
+            if (radioButton1.Checked)
+            {
+
+                encodedText = encodeXOR(textBox1.Text, "кек");
+                textBox2.Text = String.Join(" ", Encoding.UTF8.GetString(encodedText));
+            }
+
+            //Дешифровка
+            else if (radioButton2.Checked)
+            {
+
+                textBox2.Text = String.Join(" ", decodeXOR(encodedText, "кек"));
+            }
+
+            else
+            {
+                MessageBox.Show("СИСТЕМНАЯ ОШИБКА!!!");
+            }
+        }
+
         //Заполнение алфавитом
         private void button9_Click(object sender, EventArgs e)
         {
@@ -318,6 +344,22 @@ namespace AgentXResident
             }
 
             enableButtons();
+        }
+
+        //Перевод текста из textBox2 в textBox1
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            for (int i = 0; i < textBox2.Text.Length; ++i)
+            {
+                char position = textBox2.Text.ElementAt(i);
+                if (position == '/')
+                {
+                    break;
+                }
+                textBox1.Text += position;
+            }
+            textBox2.Clear();
         }
 
         private void endAlphabet()
@@ -355,13 +397,16 @@ namespace AgentXResident
         {
             button1.Enabled = true;
             button3.Enabled = true;
-            button2.Enabled = true;
+            //button2.Enabled = true;
+            button4.Enabled = true;
+            button10.Enabled = true;
         }
 
         private void disableButtons()
         {
             button1.Enabled = false;
             button3.Enabled = false;
+            button4.Enabled = false;
         }
 
         private bool coincidence(Dictionary<char, char> searchDic, char element)
@@ -375,6 +420,33 @@ namespace AgentXResident
                 }
             }
             return false;
+        }
+
+        private byte[] encodeXOR (string sText, string sKey)
+        {
+            byte[] txt = Encoding.Default.GetBytes(sText);
+            byte[] key = Encoding.Default.GetBytes(sKey);
+            byte[] res = new byte[sText.Length];
+
+            for (int i = 0; i < txt.Length; ++i)
+            {
+                res[i] = (byte)(txt[i] ^ key[i % key.Length]);
+            }
+
+            return res;
+        }
+
+        private string decodeXOR (byte[] sText, string sKey)
+        {
+            byte[] res = new byte[sText.Length];
+            byte[] key = Encoding.Default.GetBytes(sKey);
+
+            for (int i = 0; i < sText.Length; ++i)
+            {
+                res[i] = (byte)(sText[i] ^ key[i % key.Length]);
+            }
+
+            return Encoding.Default.GetString(res);
         }
 
     }
